@@ -1,0 +1,45 @@
+<script type="text/javascript">
+
+    jQuery(function () {
+        jQuery('.rem').click(function () {
+            jQuery(this).toggleClass('selected');
+        })
+
+        jQuery('#d').click(function () {
+            jQuery('.form_row ul').toggle();
+            event.cancelBubble = true;
+        })
+
+        jQuery('body').click(function () {
+            jQuery('.form_row ul').hide();
+        })
+        jQuery(".login-btn").click(function () {
+            var username = jQuery("#signup_name").val();
+            var password = jQuery("#signup_password").val();
+            if ((username.trim() == "" || username.trim() == null) || (password.trim() == "" || password.trim() == null)) {
+                alert("用户名和密码不能为空");
+            }
+        });
+    });
+</script>
+<body>
+<div class='signup_container'>
+    <h1 class='signup_title'>用户登陆</h1>
+    <img src='/images/logimg/people.png' id='admin'/>
+    <form class="signup_form_form" id="signup_form" method="post" action="/"
+          data-secure-action="https://www.tumblr.com/login" data-secure-ajax-action="">
+        <div id="signup_forms" class="signup_forms clearfix">
+            <div class="form_row first_row">
+                <input type="text" name="user" placeholder="请输入用户名" id="signup_name" required="true">
+            </div>
+            <div class="form_row">
+                <input type="password" name="password" placeholder="请输入密码" id="signup_password" required="true">
+            </div>
+        </div>
+        <div class="login-btn-set">
+            <input type="submit" value="登录" class="login-btn"/></div>
+    </form>
+    <p class='copyright'>版权所有 Byte卷王</p>
+</div>
+</body>
+</html>
