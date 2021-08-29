@@ -1,40 +1,59 @@
 <template>
   <div id="Home">
-    <div class="box">
-      <div class="a">aaaa</div>
-      <div class="b"></div>
-    </div>
+    <el-container>
+  <el-header>
+
+  </el-header>
+  <el-container>
+    <el-aside width="200px">
+      <el-col :span="12">
+    <h5>后台管理</h5>
+    <el-menu
+      default-active="2"
+      class="el-icon-menu"
+     >
+       <el-menu-item index="1">
+        <i class="el-icon-menu"></i>
+        <span slot="title">导航一</span>
+      </el-menu-item>
+      <el-menu-item index="2">
+        <i class="el-icon-menu"></i>
+        <span slot="title">导航二</span>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <i class="el-icon-setting"></i>
+        <span slot="title">导航三</span>
+      </el-menu-item>
+    </el-menu>
+  </el-col>
+    </el-aside>
+    <el-main>
+      <router-view></router-view>
+    </el-main>
+  </el-container>
+</el-container>
+    
   </div>
 </template>
 <script>
-export default {
-  data() {
-    return {
-     
-    }
+import BackedpageA from '../components/BackedpageA'
+import BackedpageB from '../components/BackedpageB'
 
+export default {
+  components: {
+    BackedpageA,
+    BackedpageB
   },
+  
   methods: {
    
   }
 }
 </script>
 
-<style >
-.box{
-  width: 500px;
-  height: 500px;
-  background-color: antiquewhite;
-  display: flex;
-}
-.a{
-  width: 50px;
-  height: 50px;
-  background-color: aquamarine;
-}
-.b{
-  width: 150px;
-  height: 30px;
-  background-color: coral;
+<style>
+
+#Home > section > section > aside > div{
+  width: 200px;
 }
 </style>
