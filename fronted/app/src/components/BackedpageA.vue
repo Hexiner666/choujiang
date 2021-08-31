@@ -59,7 +59,7 @@
 <style scoped>
 .el-table{
     width: 800px;
-    margin: 100px auto;
+    margin: 50px auto;
     border: 4px double #606266;
     border-radius: 15px;
     padding: 20px;

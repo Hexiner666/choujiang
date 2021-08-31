@@ -21,18 +21,19 @@ const routes = [
     {
         path: '/manage',
         name: 'manage',
-        component: manage
+        component: manage,
+        children:[ {
+            path: 'BackedpageA',
+            name: 'BackedpageA',
+            component: BackedpageA
+        },
+        {
+            path: 'BackedpageB',
+            name: 'BackedpageB',
+            component: BackedpageB
+        }]
     },
-    {
-        path: '/BackedpageA',
-        name: 'BackedpageA',
-        component: BackedpageA
-    },
-    {
-        path: '/BackedpageB',
-        name: 'BackedpageB',
-        component: BackedpageB
-    }
+   
 ]
 
 const router = new VueRouter({
